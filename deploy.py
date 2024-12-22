@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import locale
+import os
 from sklearn.preprocessing import LabelEncoder
 
 # Set page configuration
@@ -12,11 +13,18 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Load the trained model
-model = joblib.load(r'model.pkl')
+model_path = r'model.pkl'
+if os.path.exists(model_path):
+    model = joblib.load(model_path)
+else:
+    st.error(f"Model file not found at {model_path}")
 
 # Load the dataset to get feature names and encoders
-data = pd.read_csv(r'test.csv')
+file_path = r'test.csv'
+if os.path.exists(file_path ):
+    data = pd.read_csv(file_path)
+else:
+    st.error(f"Data file not found at {file_path}")
 
 # Extract the feature names
 feature_names = data.drop(columns=['Id']).columns.tolist()
