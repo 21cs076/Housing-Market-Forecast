@@ -13,10 +13,10 @@ st.set_page_config(
 )
 
 # Load the trained model
-model = joblib.load(r'H:\Project\Predicting Housing Prices\model.joblib')
+model = joblib.load(r'model.joblib')
 
 # Load the dataset to get feature names and encoders
-data = pd.read_csv(r'H:\Project\Predicting Housing Prices\test.csv')
+data = pd.read_csv(r'test.csv')
 
 # Extract the feature names
 feature_names = data.drop(columns=['Id']).columns.tolist()
