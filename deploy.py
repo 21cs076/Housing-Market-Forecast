@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-model_path = r'model.pkl'
+model_path = r'Housing-Market-Forecast/model.pkl'
 try:
     if os.path.exists(model_path):
         model = joblib.load(model_path)
@@ -23,7 +23,7 @@ except EOFError:
     st.error("Error loading model. The file might be corrupted or incomplete.")
 
 # Load the dataset to get feature names and encoders
-file_path = r'test.csv'
+file_path = r'Housing-Market-Forecast/test.csv'
 if os.path.exists(file_path):
     data = pd.read_csv(file_path)
 else:
