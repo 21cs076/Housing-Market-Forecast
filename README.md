@@ -1,5 +1,25 @@
 # Housing-Market-Forecast
 
+
+## Dataset: House Prices - Advanced Regression Techniques
+
+This dataset is used for predicting house prices using advanced regression techniques. It contains four files:
+
+1. **train.csv**: The training set used to build the predictive model.
+2. **test.csv**: The test set used to evaluate the model's performance.
+3. **data_description.txt**: A detailed description of each column in the dataset, originally prepared by Dean De Cock and slightly edited to match the column names used.
+4. **sample_submission.csv**: A benchmark submission file from a linear regression on year and month of sale, lot square footage, and number of bedrooms.
+
+### Dataset Link
+Public dataset on housing prices: [house-prices-advanced-regression-techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques).
+
+**Files**: 4 files  
+**Size**: 957.39 kB  
+**Type**: csv, txt  
+**License**: MIT
+
+This dataset is essential for anyone looking to apply advanced regression techniques in predicting house prices and includes comprehensive details about each feature used in the analysis.
+
 The `Housing-Market-Forecast` appears to be a project aimed at predicting housing market prices using machine learning models. The project involves the following key components:
 
 1. **Project Overview**:
@@ -19,7 +39,6 @@ The `Housing-Market-Forecast` appears to be a project aimed at predicting housin
    - The repository primarily uses Jupyter Notebook (75.9%) and Python (24.1%).
   
 This project provides a comprehensive solution for predicting housing prices by integrating data preprocessing, model training, and a user-friendly web application for making predictions.
-
 
 
 
