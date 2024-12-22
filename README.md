@@ -20,6 +20,9 @@ Public dataset on housing prices: [house-prices-advanced-regression-techniques](
 
 This dataset is essential for anyone looking to apply advanced regression techniques in predicting house prices and includes comprehensive details about each feature used in the analysis.
 
+
+### Introduction
+
 The `Housing-Market-Forecast` appears to be a project aimed at predicting housing market prices using machine learning models. The project involves the following key components:
 
 1. **Project Overview**:
@@ -41,7 +44,7 @@ The `Housing-Market-Forecast` appears to be a project aimed at predicting housin
 This project provides a comprehensive solution for predicting housing prices by integrating data preprocessing, model training, and a user-friendly web application for making predictions.
 
 
-
+### Relevance
 
 The `Housing-Market-Forecast` project is relevant for several reasons:
 
@@ -53,7 +56,7 @@ The `Housing-Market-Forecast` project is relevant for several reasons:
 Overall, the project combines data science, machine learning, and web application development to address a real-world problem, making it a valuable resource in both academic and professional contexts.
 
 
-
+### Deploy
 
 The `deploy.py` is a Streamlit application designed to forecast housing market prices. Here is a detailed explanation of the file:
 
@@ -98,7 +101,7 @@ The `deploy.py` is a Streamlit application designed to forecast housing market p
 
 
 
-
+### Model
 
 The `model.joblib` file is a serialized machine learning model saved using the `joblib` library in Python. This file is used in the `deploy.py` script to load the pre-trained model and make predictions. Here is a detailed explanation of what this file typically contains and how it is used:
 
@@ -139,8 +142,7 @@ The `model.joblib` file is a serialized machine learning model saved using the `
    - It also includes any pre-processing steps that were applied to the data, such as scaling or encoding.
 
 
-
-
+### Dataset Contents
 
 The `test.csv` contains data likely used for testing or validating the housing market forecasting model. This dataset includes various features related to housing properties. Here is a detailed explanation of the file:
 
@@ -230,8 +232,7 @@ The `test.csv` contains data likely used for testing or validating the housing m
    - The features cover a wide range of property characteristics, which helps the model to make accurate predictions.
 
 
-
-
+### Model Training
 
 The `train.ipynb` is used for training a machine learning model to predict housing prices. Here is a detailed explanation:
 
