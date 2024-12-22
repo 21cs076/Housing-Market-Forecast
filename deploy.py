@@ -14,14 +14,17 @@ st.set_page_config(
 )
 
 model_path = r'model.pkl'
-if os.path.exists(model_path):
-    model = joblib.load(model_path)
-else:
-    st.error(f"Model file not found at {model_path}")
+try:
+    if os.path.exists(model_path):
+        model = joblib.load(model_path)
+    else:
+        st.error(f"Model file not found at {model_path}")
+except EOFError:
+    st.error("Error loading model. The file might be corrupted or incomplete.")
 
 # Load the dataset to get feature names and encoders
 file_path = r'test.csv'
-if os.path.exists(file_path ):
+if os.path.exists(file_path):
     data = pd.read_csv(file_path)
 else:
     st.error(f"Data file not found at {file_path}")
@@ -84,19 +87,22 @@ for feature in label_encoders:
 
 # Predict button
 if st.button("Predict"):
-    prediction = model.predict(input_df)
-    predicted_usd = prediction[0]
+    try:
+        prediction = model.predict(input_df)
+        predicted_usd = prediction[0]
 
-    # Conversion rate (1 USD to INR)
-    conversion_rate = 82.50  # Update based on the latest rate
-    predicted_inr = predicted_usd * conversion_rate
+        # Conversion rate (1 USD to INR)
+        conversion_rate = 82.50  # Update based on the latest rate
+        predicted_inr = predicted_usd * conversion_rate
 
-    # Set locale to Indian
-    locale.setlocale(locale.LC_ALL, 'en_IN')
+        # Set locale to Indian
+        locale.setlocale(locale.LC_ALL, 'en_IN')
 
-    # Format the predicted values
-    formatted_usd = f"${predicted_usd:,.2f}"
-    formatted_inr = locale.format_string("%0.2f", predicted_inr, grouping=True)
+        # Format the predicted values
+        formatted_usd = f"${predicted_usd:,.2f}"
+        formatted_inr = locale.format_string("%0.2f", predicted_inr, grouping=True)
 
-    st.write(f"Estimated Cost in USD: {formatted_usd}")
-    st.write(f"Estimated Cost in INR: ₹{formatted_inr}")
+        st.write(f"Estimated Cost in USD: {formatted_usd}")
+        st.write(f"Estimated Cost in INR: ₹{formatted_inr}")
+    except Exception as e:
+        st.error(f"Error during prediction: {e}")
