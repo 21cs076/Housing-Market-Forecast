@@ -19,8 +19,8 @@ try:
         model = joblib.load(model_path)
     else:
         st.error(f"Model file not found at {model_path}")
-except EOFError:
-    st.error("Error loading model. The file might be corrupted or incomplete.")
+except (EOFError, ValueError) as e:
+    st.error(f"Error loading model: {e}")
 
 # Load the dataset to get feature names and encoders
 file_path = r'test.csv'
@@ -96,7 +96,10 @@ if st.button("Predict"):
         predicted_inr = predicted_usd * conversion_rate
 
         # Set locale to Indian
-        locale.setlocale(locale.LC_ALL, 'en_IN')
+        try:
+            locale.setlocale(locale.LC_ALL, 'en_IN')
+        except locale.Error:
+            st.error("Locale setting failed. Please ensure the locale is installed on your system.")
 
         # Format the predicted values
         formatted_usd = f"${predicted_usd:,.2f}"
