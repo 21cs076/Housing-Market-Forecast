@@ -13,10 +13,10 @@ st.set_page_config(
 )
 
 # Load the trained model
-model = joblib.load(r'H:\Project\Landslide Detection\Housing-Market-Forecast\model.pkl')
+model = joblib.load(r'model.pkl')
 
 # Load the dataset to get feature names and encoders
-data = pd.read_csv(r'H:\Project\Landslide Detection\Housing-Market-Forecast\test.csv')
+data = pd.read_csv(r'test.csv')
 
 # Extract the feature names
 feature_names = data.drop(columns=['Id']).columns.tolist()
