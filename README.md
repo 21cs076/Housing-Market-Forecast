@@ -3,7 +3,7 @@
 
 ## Dataset: House Prices - Advanced Regression Techniques
 
-This dataset is used for predicting house prices using advanced regression techniques. It contains four files:
+This is used for predicting house prices using advanced regression techniques. It contains four files:
 
 1. **train.csv**: The training set used to build the predictive model.
 2. **test.csv**: The test set used to evaluate the model's performance.
